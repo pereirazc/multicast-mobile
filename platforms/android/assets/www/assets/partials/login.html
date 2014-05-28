@@ -1,0 +1,76 @@
+<div content-for="title">
+    <span>Multicast Sensor</span>
+</div>
+
+<div class="scrollable">
+    <div class="scrollable-content section">
+
+        <form action="" id="">
+
+            <div bs-panel title="Login">
+
+                <input
+                        bs-form-control
+
+                        type="email"
+                        ng-model="credentials.email"
+                        label="Username"
+                        label-class="col-xs-3 col-sm-2 col-lg-1"
+                        class="col-xs-9 col-sm-10 col-lg-11"
+                        placeholder="email"
+                        />
+                <input
+                        bs-form-control
+
+                        type="password"
+                        ng-model="credentials.password"
+                        label="Password"
+                        label-class="col-xs-3 col-sm-2 col-lg-1"
+                        class="col-xs-9 col-sm-10 col-lg-11"
+                        placeholder="password"
+                        />
+
+                <!--       <switch
+                        bs-form-control
+                        ng-change="switchChanged()"
+                        ng-model="invoice.payed"
+                        ng-click="switchClicked()"
+                        label="Payed"
+                        label-class="col-xs-3 col-sm-2 col-lg-1"
+                        class="col-xs-9 col-sm-10 col-lg-11"
+                        >
+                        </switch>
+
+                       <input
+                        bs-form-control
+
+                        type="number"
+                        ng-model="invoice.amount"
+                        label="Amount"
+                        label-class="col-xs-3 col-sm-2 col-lg-1"
+                        class="col-xs-9 col-sm-10 col-lg-11"
+
+                        />
+
+                       <input
+                        bs-form-control
+                        type="date"
+                        ng-model="invoice.date"
+                        label="Date"
+                        label-class="col-xs-3 col-sm-2 col-lg-1"
+                        class="col-xs-9 col-sm-10 col-lg-11"
+
+                        />-->
+            </div>
+
+            <div bs-panel class="form-actions">
+                <div content-for="navbarAction" duplicate>
+                    <button class="btn btn-primary pull-right" ng-click="login()">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
