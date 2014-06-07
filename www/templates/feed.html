@@ -1,0 +1,17 @@
+<ion-view ng-cloak title="{{feed.sensorLabel}} - {{feed.feedId}}">
+
+<!--   <ion-nav-bar class="bar-positive" ng-class="{'bar-online': online, 'bar-offline': !online  }">
+   </ion-nav-bar>
+
+    <ion-nav-buttons side="left">
+        <ion-nav-back-button class="button-clear">
+            <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button>
+    </ion-nav-buttons>-->
+    <ion-content has-header="true" padding="false">
+
+        <highchart ng-cloak class="padding" id="chart1" config="chartConfig" ></highchart>
+
+    </ion-content>
+
+</ion-view>

@@ -9,7 +9,11 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "xml": "<feature name=\"BackgroundServicePlugin\"><param name=\"android-package\" value=\"com.red_folder.phonegap.plugin.backgroundservice.BackgroundServicePlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
@@ -17,19 +21,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"PushPlugin\"><param name=\"android-package\" value=\"com.plugin.gcm.PushPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"BackgroundServicePlugin\"><param name=\"android-package\" value=\"com.red_folder.phonegap.plugin.backgroundservice.BackgroundServicePlugin\"/></feature>",
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -37,57 +33,7 @@
             },
             "AndroidManifest.xml": {
                 "parents": {
-                    "/*": [
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 2
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
-                            "count": 1
-                        }
-                    ],
                     "/manifest": [
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"com.google.android.c2dm.permission.RECEIVE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<permission android:name=\"br.com.multicast.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"br.com.multicast.permission.C2D_MESSAGE\" />",
-                            "count": 1
-                        },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\" />",
                             "count": 1
@@ -95,23 +41,17 @@
                     ],
                     "/manifest/application": [
                         {
-                            "xml": "<activity android:name=\"com.plugin.gcm.PushHandlerActivity\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<receiver android:name=\"com.plugin.gcm.CordovaGCMBroadcastReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><action android:name=\"com.google.android.c2dm.intent.REGISTRATION\" /><category android:name=\"br.com.multicast\" /></intent-filter></receiver>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<receiver android:name=\"com.red_folder.phonegap.plugin.backgroundservice.BootReceiver\"><intent-filter><action android:name=\"android.intent.action.BOOT_COMPLETED\" /></intent-filter></receiver>",
                             "count": 1
                         },
                         {
-                            "xml": "<service android:name=\"br.com.multicast.MulticastService\"><intent-filter><action android:name=\"br.com.multicast.MulticastService\" /></intent-filter></service>",
+                            "xml": "<service android:name=\"br.com.multicast.mobile.MulticastService\"><intent-filter><action android:name=\"br.com.multicast.mobile.MulticastService\" /></intent-filter></service>",
                             "count": 1
-                        },
+                        }
+                    ],
+                    "/*": [
                         {
-                            "xml": "<activity android:configChanges=\"orientation|keyboardHidden|keyboard|screenSize|locale\" android:label=\"@string/app_name\" android:name=\"br.com.multicast.ServiceActivity\" android:theme=\"@android:style/Theme.Black.NoTitleBar\"><intent-filter><action android:name=\"android.intent.action.MAIN\" /></intent-filter></activity>",
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
                         }
                     ]
@@ -120,22 +60,28 @@
         }
     },
     "installed_plugins": {
-        "org.apache.cordova.network-information": {
-            "PACKAGE_NAME": "br.com.multicast"
+        "br.com.multicast.mobile.MulticastService": {
+            "PACKAGE_NAME": "br.com.multicast.mobile"
+        },
+        "com.ionic.keyboard": {
+            "PACKAGE_NAME": "br.com.multicast.mobile"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "br.com.multicast.mobile"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "br.com.multicast"
+            "PACKAGE_NAME": "br.com.multicast.mobile"
         },
-        "org.apache.cordova.media": {
-            "PACKAGE_NAME": "br.com.multicast"
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "br.com.multicast.mobile"
         },
-        "com.phonegap.plugins.PushPlugin": {
-            "PACKAGE_NAME": "br.com.multicast"
+        "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "br.com.multicast.mobile"
         }
     },
     "dependent_plugins": {
-        "org.apache.cordova.file": {
-            "PACKAGE_NAME": "br.com.multicast"
+        "com.red_folder.phonegap.plugin.backgroundservice": {
+            "PACKAGE_NAME": "br.com.multicast.mobile"
         }
     }
 }
