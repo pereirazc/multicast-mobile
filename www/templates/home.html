@@ -1,0 +1,38 @@
+<ion-view title="Home" hide-back-button="true">
+
+<!--    <ion-nav-bar class="bar-positive nav-title-slide-ios7" ng-class="{'bar-online': online, 'bar-offline': !online  }">
+    </ion-nav-bar>-->
+
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+
+    <ion-content has-header="true" padding="false">
+
+<!--        <ion-refresher
+                pulling-text=""
+                pulling-icon=""
+                refreshing-icon=""
+                on-refresh="doRefresh()">
+        </ion-refresher>-->
+
+        <div ng-cloak class="list card" ng-repeat="sensor in sensors">
+            <div ng-cloak class="item item-icon-left item-divider">
+                <i class="icon ion-radio-waves balanced"></i>
+                <h2><b>{{ sensor.label }}</b></h2>
+                <p style="font-size: x-small">{{ sensor.sensorId }}</p>
+            </div>
+            <a ng-switch="ok" href="#/app/{{sensor.sensorId}}/{{feed.feedId}}/graph" class="item item-icon-left item-icon-right" ng-repeat="feed in sensor.feeds" ng-controller="FeedCtrl" ng-init="init(sensor.sensorId, feed.feedId)">
+                <i class="icon ion-thermometer"></i>
+                <h2>{{ feed.feedId }}</h2>
+                <i ng_cloak ng-switch-when="true" class="icon">
+                    <span ng_cloak class="badge badge-assertive badge-top">{{last.value}}</span>
+                    <span ng_cloak class="badge badge-down" style="font-size: xx-small">{{last.timestamp}}</span>
+                </i>
+                <i ng-show="!ok" class="icon ion-refreshing"></i>
+            </a>
+        </div>
+
+    </ion-content>
+
+</ion-view>
